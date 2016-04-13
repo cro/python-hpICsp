@@ -4,6 +4,13 @@ HP ICsp Library
 ~~~~~~~~~~~~~~~~~~~~~
 
 """
+from __future__ import unicode_literals
+from __future__ import print_function
+from __future__ import division
+from __future__ import absolute_import
+from future import standard_library
+standard_library.install_aliases()
+
 
 __title__ = 'hpICsp'
 __version__ = '1.0.0'
@@ -35,8 +42,8 @@ __status__ = 'Development'
 ###
 
 import sys
-if sys.version_info < (3, 4):
-    raise Exception('Must use Python 3.4 or later')
+#if sys.version_info < (3, 4):
+#    raise Exception('Must use Python 3.4 or later')
 
 from hpICsp.common import *
 from hpICsp.exceptions import *
