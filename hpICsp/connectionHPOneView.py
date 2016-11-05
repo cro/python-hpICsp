@@ -105,8 +105,8 @@ class connectionHPOneView(object):
             try:
                 if self._sslTrustAll is False:
                     import ssl
-                    context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-                    context.verify_mode = ssl.CERT_REQUIRED
+                    context = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
+                    context.verify_mode = ssl.CERT_VERIFY
                     context.load_verify_locations(self._sslTrustedBundle)
                     if self._doProxy is False:
                         conn = http.client.HTTPSConnection(self._host,
@@ -119,7 +119,7 @@ class connectionHPOneView(object):
                     conn.request(method, path, body, self._headers)
                 else:
                     import ssl
-                    context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+                    context = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
                     context.verify_mode = ssl.CERT_NONE
                     if self._doProxy is False:
                         conn = http.client.HTTPSConnection(self._host,

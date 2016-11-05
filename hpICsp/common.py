@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 
 """
 common.py
@@ -39,6 +40,7 @@ import sys
 import time
 import json
 from hpICsp.exceptions import *
+
 
 uri = {
     'build': '/rest/os-deployment-build-plans', 
